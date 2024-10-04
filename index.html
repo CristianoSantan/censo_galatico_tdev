@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Censo Galático</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Censo Galático</title>
 </head>
 <body>
-    <h1>Censo Galático</h1>
+  <h1>Censo Galático</h1>
 
-    <div id="planets"></div>
-    <div id="info"></div>
+  <input type="text" id="search" placeholder="Nome do planeta">
+  <button onclick="fetchPlanet()">Carregar planeta</button>
 
-    <script src="script.js"></script>
+  <div id="planets"></div>
+  <div id="info"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

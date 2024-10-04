@@ -33,4 +33,11 @@ async function infoPlanet(planet) {
   info.appendChild(div);
 };
 
+async function fetchPlanet() {
+  let search = document.getElementById('search').value;
+  let {results} = await fetchApi(apiStarWars + '&search=' + search);
+  let planet = results[0]
+  infoPlanet(planet)
+};
+
 printPlanets();
