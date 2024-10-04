@@ -31,6 +31,42 @@ async function infoPlanet(planet) {
   `;
 
   info.appendChild(div);
+
+  if (planet.residents.length === 0) {
+    info.innerHTML += '<p>Nenhum residente encontrado.</p>';
+    return;
+  };
+
+  let table = document.createElement('table');
+  let tr = ``
+  
+  let residents = planet.residents.map(async resident => {
+    let results = await fetchApi(resident);
+  
+    tr += `
+      <tr>
+        <td>${results.name}</td>
+        <td>${results.birth_year}</td>
+      </tr>
+    `;
+  });
+
+  await Promise.all(residents);
+  
+  table.innerHTML = `
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Nascimento</th>
+        </tr>
+      </thead>
+      <tbody>
+      ${tr}
+      </tbody>
+    </table>
+  `
+  info.appendChild(table);
 };
 
 async function fetchPlanet() {
