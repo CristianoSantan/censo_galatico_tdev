@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Censo Galático</title>
+  <link rel="shortcut icon" href="./assets/img/Death-Star.svg" type="image/svg">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-  <h1>Censo Galático</h1>
+  <main class="container">
+    <div class="census">
+      <h1>Censo Galático</h1>
 
-  <input type="text" id="search" placeholder="Nome do planeta">
-  <button onclick="fetchPlanet()">Carregar planeta</button>
+      <div class="search">
+        <input type="text" id="search" placeholder="Nome do planeta">
+        <button id="fetch-button" onclick="fetchPlanet()">Carregar planeta</button>
+      </div>
 
-  <div id="planets"></div>
-  <div id="info"></div>
+      <div id="planets"></div>
+      <div id="info"></div>
+    </div>
+  </main>
 
-  <script src="script.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
